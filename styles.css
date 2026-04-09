@@ -1,0 +1,301 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+}
+/* 
+header img {
+    width: 130px;
+} */
+
+header{
+    margin:20px;
+    background-color: greenyellow;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family:Verdana, Tahoma;
+}
+
+.hamburger-icon {
+    display: none; 
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+ nav ul{
+    display: flex;
+    gap:50px;
+}
+
+#home img{
+width: 90%;
+height:80vh;
+object-fit: cover;
+}
+
+.btn {
+   display: inline-block;
+  background-color: #25D366; 
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #1EBE5D; 
+  transform: translateY(-2px);
+}
+
+.hero-container {
+    position: absolute;
+    top:50%;
+    left:50%;
+    font-family: cursive;
+    color: white;
+ transform: translate(-50%,-50%);
+}
+
+#home{
+    position: relative;
+  max-width:1200px;
+ margin: 20px auto;
+ text-align: center;
+}
+
+#about img{
+   width:600px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+h2 {
+    font-size:1.2rem;
+}
+
+#about {
+  max-width: 1200px;
+  width: 100%;
+  padding: 60px 20px;
+text-align: left;
+gap:50px;
+    display: flex;
+  align-items: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* DEBUGGING TRICK: Draws a red box around every single item in your card */
+
+
+.product-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 24px;
+    padding: 20px;
+    width: max-content;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    /* 0% { transform: translateX(0%); } */
+    100% { transform: translateX(-50%); }
+}
+.product-card {
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#products {
+    overflow: hidden;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.product-price {
+    font-size: 1.4rem; 
+    font-weight: 800; 
+    color: #111827; 
+    margin-bottom: 20px; 
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.review-container {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 24px;
+    padding: 40px 20px;
+}
+
+.review-card {
+    min-width: 300px;
+    flex: 1;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid greenyellow;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#order-now {
+  background-color: #111827; /* A very dark background makes this section pop out after the white review section */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta-wrapper {
+  max-width: 600px; /* Keeping the text narrow makes it much easier to read */
+  margin: 0 auto;
+}
+
+.cta-wrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.whatsapp-btn {
+  display: block;/* CRITICAL: Allows us to add padding and margin to a standard text link*/
+  background-color: #25D366; /* The official WhatsApp Green hex code */
+  color: white;
+  text-decoration: none; /* Removes the default blue underline */
+  padding: 15px 35px;
+  border-radius: 30px; /* Modern pill shape */
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 25px;
+  transition: background-color 0.3s ease; /* Makes the hover effect smooth */
+}
+
+.whatsapp-btn:hover {
+  background-color: #1DA851; /* A slightly darker green when the user hovers over it */
+}
+
+#site-footer {
+  background-color: black; /* Slightly darker than the CTA section for a nice layered look */
+  color: #cbd5e1; /* A soft, readable gray instead of harsh white */
+  padding: 60px 20px 20px;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* The magic rule that pushes columns down on mobile screens */
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 40px;
+  border-bottom: 1px solid #334155; /* A subtle line to separate the main footer from the copyright */
+  padding-bottom: 40px;
+}
+
+.footer-col {
+  flex: 1; /* Tells the columns to share the available space equally */
+  min-width: 250px; /* Prevents the columns from getting dangerously skinny on smaller screens */
+}
+
+.footer-col h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    header {
+        margin: 0; 
+        position: relative;
+        /* We keep this as a row so the Logo is on the left and the ☰ is on the right! */
+    }
+
+    /* 1. Show the hamburger icon on phones */
+    .hamburger-icon {
+        display: block; 
+    }
+
+    /* 2. Hide the links by default (The "Off" State) */
+    nav ul{
+        display: none; 
+        flex-direction: column;
+        gap: 15px; 
+        align-items: center;
+        width: 100%; /* Makes the menu take up the full screen width */
+        padding-top: 20px;
+    }
+
+    /* 3. The "On" State (JavaScript will trigger this!) */
+    nav ul.active {
+        display: flex;
+    }
+
+    #about {
+
+          flex-wrap: wrap;
+    }
+
+    #about img{
+        max-width: 350px;
+
+    }
+    
+    /* We also need to force the header-wrapper to drop down below the logo */
+    .header-wrapper {
+        width: 100%;
+    }
+
+ @media (max-width: 768px) {
+    #products {
+        overflow: hidden;
+    }
+    
+    .product-container {
+        width: 100%;
+        animation: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .product-card {
+        min-width: 200px;
+        scroll-snap-align: start;
+    }
+}
+
+
+}
